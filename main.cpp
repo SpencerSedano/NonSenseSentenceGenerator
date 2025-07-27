@@ -55,7 +55,8 @@ string template5(mt19937& randomNumber) {
 
 // Generate a sentence using a random template
 string generateSentence(mt19937& randomNumber) {
-    int choice = rand() % 5;
+    uniform_int_distribution<int> dist(0, 4);
+    int choice = dist(randomNumber);
     switch (choice) {
         case 0: return template1(randomNumber);
         case 1: return template2(randomNumber);
